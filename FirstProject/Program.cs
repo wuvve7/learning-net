@@ -7,20 +7,36 @@ namespace FirstProject
     {
         static void Main(string[] args)
         {
-            Colorfunction("White");
-            Colorfunction("lolo");
-            // This is a simple console application that prints "Hello, World!" to the console.
-            // You can run this application using the .NET CLI or Visual Studio.
-        }
+            // starting project from satr website course C# 101
+            Console.WriteLine("how much student?: ");
+            int studentCount = int.Parse(Console.ReadLine());
 
-        static void Colorfunction(string life)
-        {
-            var colors = new string[] { "Red", "Green", "Blue", life };
-
-            foreach (var color in colors)
+            for (int i = 0; i < studentCount; i++)
             {
-                Console.WriteLine(color);
+                Console.WriteLine("Enter student name: ");
+                string studentName = Console.ReadLine();
+                Console.WriteLine("Enter student grade: ");
+                int studentGrade = int.Parse(Console.ReadLine());
+
+                studentInfo(studentName, studentGrade);
+                PassOrFailed(studentGrade);
             }
         }
+        static void studentInfo(string studenteName, int studentGrade)
+            {
+                Console.WriteLine("Hello " + studenteName + " your grade are " + studentGrade);
+            }
+        static void PassOrFailed(int studentGrade)
+            {
+                if (studentGrade >= 60)
+                {
+                    Console.WriteLine("You passed the course!");
+                }
+                else
+                {
+                    Console.WriteLine("You failed the course.");
+            }
+        }
+        
     }
 }
