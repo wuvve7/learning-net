@@ -1,0 +1,20 @@
+﻿@model List<FirstWebApp.Models.Product>
+
+<h2>Product List</h2>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var product in Model)
+        {
+            <li>
+                <strong>@product.Name</strong> - @product.Price SAR
+                | <a asp-controller="Products" asp-action="Details" asp-route-id="@product.Id">View Details</a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No products available.</p>
+}
